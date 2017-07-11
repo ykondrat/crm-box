@@ -3,7 +3,7 @@
         'host' => 'localhost',
         'dbname' => 'crm-box',
         'user' => 'root',
-        'password' => '1234',
+        'password' => '',
     );
 
     return ($dataBaseConnection);

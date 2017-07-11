@@ -1,7 +1,7 @@
 <?php
     $routes = array(
 
-        'crm-box' => 'main/timetable',
+        'crm-box' => 'authorization/account',
     );
 
     return ($routes);

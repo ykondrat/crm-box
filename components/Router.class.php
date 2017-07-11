@@ -28,7 +28,7 @@
                         $controllerName = array_shift($segment) . 'Controller';
                         $actionName = 'action' . ucfirst(array_shift($segment));
                         $parameters = $segment;
-                        $controllerFile = ROOT . '/controller/' . $controllerName . '.class.php';
+                        $controllerFile = ROOT . '/controllers/' . $controllerName . '.class.php';
 
                         if (file_exists($controllerFile)) {
                             include_once($controllerFile);
