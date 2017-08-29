@@ -1,0 +1,53 @@
+body {
+    background-color: #2D2D2D;
+}
+header {
+    border-bottom: 1px solid white;
+    height: 100px;
+    background: #024a54;
+    background: -webkit-linear-gradient(#024a54, #5dd4e9);
+    background: -o-linear-gradient(#024a54, #5dd4e9);
+    background: -moz-linear-gradient(#024a54, #5dd4e9);
+    background: linear-gradient(#024a54, #5dd4e9);
+    text-align: center;
+    padding-top: 25px;
+}
+#time{
+    height: 40px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: white;
+    z-index: 10;
+}
+#digital_watch {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+.crm-logo {
+    position: absolute;
+    left: 10px;
+    top: 25px;
+    display: inline;
+}
+.crm-logo img {
+    display: inline;
+    width: 50px;
+    height: 50px;
+}
+.crm-logo h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    display: inline;
+    color: black;
+    text-shadow: 1px 2px #fff;
+}
+@media only screen and (max-width: 500px){
+    .crm-logo h1 {
+        display: none;
+    }
+}
