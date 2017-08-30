@@ -36,6 +36,7 @@
             </div>
         </div>
         <div id="registr_form">
+            <div id="register_error"></div>
             <input type="text" name="login" placeholder="Login" required/>
             <input type="email" name="email" placeholder="Email" required/>
             <input type="password" name="passwd" placeholder="Password" required/>
