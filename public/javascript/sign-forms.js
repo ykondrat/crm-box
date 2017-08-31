@@ -18,8 +18,24 @@ $('#registration_login').on("click", function() {
 });
 
 $('#enter_login').on("click", function() {
-    $('#login_form input[type="text"]').val();
-    $('#login_form input[type="password"]').val();
+    $('.error_form').remove();
+    var data = {
+        login: $('#login_form input[type="text"]').val(),
+        passwd: $('#login_form input[type="password"]').val()
+    };
+    $.ajax({
+        type: 'POST',
+        url: '/crm-box/signin',
+        dataType: 'json',
+        data: data,
+        success: function (response) {
+            if (response[0] == 'OK') {
+                window.location.href = 'http://localhost/crm-box/timetable';
+            } else {
+                $(`<p class="error_form">${response[0]}</p>`).appendTo($('#login_error'));
+            }
+        }
+    });
 });
 
 $('#reg_account').on('click', function() {
@@ -30,7 +46,7 @@ $('#reg_account').on('click', function() {
     var repeatPassword = $('#registr_form input[name="rep_passwd"]').val().trim();
     var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var sender = true;
-    
+
     if (login.length < 2) {
         $('<p class="error_form">Provide valid login</p>').appendTo($('#register_error'));
         sender = false;
@@ -45,6 +61,24 @@ $('#reg_account').on('click', function() {
     }
 
     if (sender) {
-
+        var data = {
+            login: login,
+            email: email,
+            passwd: password
+        };
+        $.ajax({
+            type: 'POST',
+            url: '/crm-box/signup',
+            dataType: 'json',
+            data: data,
+            success: function (response) {
+                if (response[0] == 'OK') {
+                    window.location.href = 'http://localhost/crm-box/timetable';
+                } else {
+                    $(`<p class="error_form">${response[0]}</p>`).appendTo($('#register_error'));
+                }
+            }
+        });
     }
 });
+

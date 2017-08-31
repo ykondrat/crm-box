@@ -1,8 +1,10 @@
 <?php
 
     class ModelAuthorization {
+
         public static function signup() {
             $pdo = DataBase::getConnection();
+            $session = Session::getInstance();
             $login = $_POST['login'];
             $email = $_POST['email'];
             $passwd = $_POST['passwd'];
@@ -19,18 +21,45 @@
                 $query = $pdo->prepare("INSERT INTO `login` (login, hashed_password, email) VALUES (?, ?, ?)");
                 $query->execute([$login, hash('whirlpool', $passwd), $email]);
 
-                if (self::sendEmail($email, $login, $pdo) == True)
-                {
-                    return True;
-                }
-                else
-                {
-                    return False;
-                }
-
-            } else
-            {
-                $session->error = 'error4';
+                $session->logged_user = $login;
+                $arr = array();
+                $arr[] = 'OK';
+                echo json_encode($arr);
+            } else {
+                $arr = array();
+                $arr[] = 'Login or email is already in use';
+                echo json_encode($arr);
             }
         }
+
+        public static function signin() {
+            $session = Session::getInstance();
+            $pdo = DataBase::getConnection();
+            $arr = array();
+
+            $login = $_POST['login'];
+            $passwd = hash('whirlpool', $_POST['passwd']);
+
+            $query_login = $pdo->prepare("SELECT * FROM `login` WHERE login = '$login'");
+
+            $query_login->execute();
+            $result = $query_login->fetch(PDO::FETCH_ASSOC);
+
+            if ($login == $result['login'] || $login == '') {
+                if ($result['hashed_password'] == $passwd) {
+                    $session->logged_user = $login;
+
+                    $arr[] = 'OK';
+                    echo json_encode($arr);
+                } else {
+                    $arr[] = 'Incorrect password';
+                    echo json_encode($arr);
+                }
+            } else {
+                $arr[] = 'No such user';
+                echo json_encode($arr);
+            }
+        }
+
+        
     }

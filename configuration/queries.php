@@ -31,7 +31,6 @@
                                           login_create_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
                                           login_status integer NOT NULL DEFAULT 0,
                                           email VARCHAR(255) NOT NULL,
-                                          login VARCHAR(50) NOT NULL,
                                           PRIMARY KEY (id_login))',
 
         'services' => 'CREATE TABLE IF NOT EXISTS services (id_service serial NOT NULL,

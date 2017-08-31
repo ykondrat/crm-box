@@ -8,7 +8,12 @@
         }
         public function actionSignup() {
             ModelAuthorization::signup();
-            require_once ROOT . '/views/viewLogin.php';
+
+            return (true);
+        }
+        public function actionSignin() {
+            ModelAuthorization::signin();
+
             return (true);
         }
     }

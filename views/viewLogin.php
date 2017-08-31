@@ -13,6 +13,7 @@
     <div class="form_login">
         <div id="login_form">
             <div id="main_login">
+                <div id="login_error"></div>
                 <div class="input_div">
                     <input type="text" name="login" placeholder="Login" />
                     <input type="password" name="passwd" placeholder="Password" /><br>
