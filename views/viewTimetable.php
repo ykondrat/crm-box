@@ -1,3 +1,7 @@
 <?php
+    require_once (ROOT.'/views/viewHeaderLogged.php');
 ?>
-<h1> Hello </h1>
+
+<?php
+    require_once (ROOT.'/views/viewFooter.php');
+?>

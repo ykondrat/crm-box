@@ -61,5 +61,46 @@
             }
         }
 
-        
+        public static function forgotPassword() {
+            $pdo = DataBase::getConnection();
+            $email = $_POST['email'];
+            $arr = array();
+
+            $query = $pdo->prepare("SELECT * FROM `login` WHERE email = '$email'");
+            $query->execute();
+
+            $result = $query->fetch(PDO::FETCH_ASSOC);
+            if ($result['login']) {
+                $arr[] = 'OK';
+                echo json_encode($arr);
+                $chars = "qazxswedcvfrtgbnhyujmkiolp1234567890QAZXSWEDCVFRTGBNHYUJMKIOLP";
+                $max = 16;
+                $size = strlen($chars) - 1;
+                $password = null;
+                while ($max--) {
+                    $password .= $chars[rand(0, $size)];
+                }
+                $new_password = hash('whirlpool', $password);
+                $query = $pdo->prepare("UPDATE `login` SET hashed_password='$new_password' WHERE email = '$email'");
+                $query->execute();
+
+                $headers = "Content-Type: text/html; charset=utf-8" . "\r\n";
+                $subject = "crm-box New Password";
+                $r1 = "<html><head><style>span {font-weight: bold;}</style><head>";
+                $r2 = "<body><h1>Camagru New Password</h1>";
+                $r3 = "<article><p>Hi, {$login}!</p><p>Your new password on <span>crm-box</span> site</p><p><span>$password</span></p>";
+                $r4 = "<p>Best regards, crm-box Dev</p></body></html>";
+                $message = $r1 . $r2 . $r3 . $r4;
+                mail($email, $subject, $message, $headers);
+            } else {
+                $arr[] = 'No such user';
+                echo json_encode($arr);
+            }
+        }
+
+        public static function logout() {
+            $session = Session::getInstance();
+            $session->destroy();
+            header("Location: http://localhost/crm-box/");
+        }
     }

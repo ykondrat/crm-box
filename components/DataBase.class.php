@@ -97,19 +97,5 @@
                 echo "Error: CAN'T CREATE TABLE - sections" . $e->getMessage();
                 exit();
             }
-
-            $password = hash('whirlpool', '1234');
-            $login = 'admin';
-            $status = 1;
-            $email = "ykondrat@student.unit.ua";
-
-            $query_login = $pdo->prepare("SELECT * FROM `login` WHERE login = '$login'");
-            $query_login->execute();
-            $result_login = $query_login->fetchAll();
-
-            if ($result_login == NULL) {
-                $query = $pdo->prepare("INSERT INTO `login` (login, hashed_password, login_status, email) VALUES (?, ?, ?, ?)");
-                $query->execute([$login, $password, $status, $email]);
-            }
         }
     }

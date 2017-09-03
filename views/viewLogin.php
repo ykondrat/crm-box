@@ -30,6 +30,7 @@
             </div>
         </div>
         <div id="forgot_passwd_form">
+            <div id="msg-forgot"></div>
             <input type="email" name="email" placeholder="Email" />
             <button id="do_forgot" type="submit" name="do_forgot">Send</button>
             <div class="back_but">

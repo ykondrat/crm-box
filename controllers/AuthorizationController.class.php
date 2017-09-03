@@ -16,4 +16,14 @@
 
             return (true);
         }
+        public function actionForgot() {
+            ModelAuthorization::forgotPassword();
+
+            return (true);
+        }
+        public function actionLogout(){
+            ModelAuthorization::logout();
+
+            return (true);
+        }
     }

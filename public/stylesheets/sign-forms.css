@@ -141,6 +141,11 @@
     color: #FE6060;
     text-align: center;
 }
+.success_form {
+    font-family: 'Roboto', sans-serif;
+    color: #79F270;
+    text-align: center;
+}
 @media only screen and (max-width: 525px) {
     #enter_key, #registration_login, #reg_account, .back_but, #enter_login, #do_forgot {
         text-align: center;

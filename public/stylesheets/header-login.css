@@ -45,6 +45,7 @@ header {
     display: inline;
     color: black;
     text-shadow: 1px 2px #fff;
+    letter-spacing: 1.2px;
 }
 @media only screen and (max-width: 500px){
     .crm-logo h1 {
