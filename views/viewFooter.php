@@ -14,6 +14,8 @@
                 setTimeout("digitalWatch()", 1000);
             }
         </script>
-
+        <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+        <script src="./public/javascript/sign-forms.js"></script>
+        <script src="./public/javascript/handelRoutes.js"></script>
     </body>
 </html>
