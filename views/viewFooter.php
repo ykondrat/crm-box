@@ -17,5 +17,6 @@
         <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
         <script src="./public/javascript/sign-forms.js"></script>
         <script src="./public/javascript/handelRoutes.js"></script>
+        <script src="./public/javascript/service.js"></script>
     </body>
 </html>

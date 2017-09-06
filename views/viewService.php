@@ -2,39 +2,35 @@
     require_once (ROOT.'/views/viewHeaderLogged.php');
 ?>
     <div id="service" class="col-md-9">
-        <div id="add_new_section_div" class="divs" style="display: none">
+        <div id="add_new_section_div" class="divs">
             <div class="container-fluid" style="background-color: black; margin:0; position:relative; height: 20%; width: 100%">
-                <img class="butterfly_img" style="height: 100%;width: 12%;" src="./images/Butterfly.png">
-                <span>IVI-Salon</span><span id="close_new_section_simb">&#215</span>
+                <span>crm-box</span><span id="close_new_section_simb">&#215</span>
             </div>
             <div style="margin-top:3%">
-                <p>Новый раздел:</p>
+                <p>New section:</p>
                 <input id="section_input" class="col-md-12 col-xs-12 form-control">
                 <div id="add_new_section_btns" class="row">
-                    <input type="button" class="col-md-3 col-xs-3 btn" value="Сохранить" id="save_section" disabled>
-                    <input type="button" class="col-md-3 col-xs-3 btn" value="Отменить" id="cancel_section">
+                    <input type="button" class="col-md-3 col-xs-3 btn" value="Save" id="save_section" disabled>
+                    <input type="button" class="col-md-3 col-xs-3 btn" value="Cancel" id="cancel_section">
                 </div>
             </div>
         </div>
         <div class="row col-md-12 col-xs-12">
-            <select oncontextmenu="return menu2(1, event);" id="select_section2"  class="col-md-2 form-control">
-                <option>Все</option>
+            <select id="select_section2"  class="col-md-2 form-control">
+                <option>All</option>
             </select>
-            <label for="select_section2"><b>Раздел:</b></label>
-            <input type="button" value="Удалить раздел" id="del_section" class="btn">
-            <input type="button" value="Создать раздел" id="new_section" class="btn">
+            <label for="select_section2"><strong>Section:</strong></label>
+            <input type="button" value="New Section" id="new_section" class="btn">
         </div>
-        <div class="row">
+        <div class="row service_main">
             <div id="sevice_table_div" >
                 <table class="table table-bordered" oncontextmenu="return menu(1, event);">
                     <thead>
                     <tr>
                         <th>№</th>
-                        <th>Название услуги</th>
-                        <th>Стоимость</th>
-                        <th>Длительность</th>
-                        <th style="display:none">Раздел</th>
-                        <th style="display:none">Описание</th>
+                        <th>Service name</th>
+                        <th>Cost</th>
+                        <th>Duration</th>
                     </tr>
                     </thead>
                     <tbody>

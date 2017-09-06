@@ -1,3 +1,6 @@
+body {
+    min-width: 640px;
+}
 #add_to_list_but{
     margin-top: 10px;
     position: absolute;
@@ -62,7 +65,6 @@ thead {
 .row input, .row select{
     margin-top: 5px;
     font-size: 1.5rem;
-    padding-right: 1%;
     text-align: center;
 }
 .row textarea{
@@ -239,15 +241,7 @@ color: white;
 #save_client:hover, #edit_client:hover {
 background-color: #a2e474;
 }
-#save_section {
-margin-left: 13%;
-background-color: #99db6a;
-color: white;
-position: relative;
-}
-#save_section:hover {
-background-color: #a2e474;
-}
+
 #cancel_section {
 background-color: #ffb854;
 color: white;
@@ -467,18 +461,7 @@ margin-top: 5%;
 }
 
 
-#add_new_section_div{
-position: absolute;
-text-align: center;
-top: 20%;
-left: 30%;
-width: 300px;
-height: 165px;
-background-color: #333333;
-color: white;
-padding-bottom: 2%;
-z-index: 15;
-}
+
 #new_post_btns input{
 margin-left: 50px;
 font-size: small;
@@ -585,7 +568,7 @@ background-color: lightgrey;
 
 
 
-#close_client_simb,#close_worker_simb,#close_serv_simb,#close_new_post_simb,#close_new_section_simb
+#close_client_simb,#close_worker_simb,#close_serv_simb,#close_new_post_simb
 {
 float:right;
 margin-right:1%
