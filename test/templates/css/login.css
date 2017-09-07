@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #2D2D2D;
+}
+header {
+    border-bottom: 1px solid white;
+    height: 100px;
+    background: #024a54;
+    background: -webkit-linear-gradient(#024a54, #5dd4e9);
+    background: -o-linear-gradient(#024a54, #5dd4e9);
+    background: -moz-linear-gradient(#024a54, #5dd4e9);
+    background: linear-gradient(#024a54, #5dd4e9);
+}
+#forgot_passwd_form, #registr_form{
+    display: none;
+}
+.login_error {
+    /*display: none;*/
+    color: white;
+    text-align: center;
+    height: 60px;
+    font-family: fontawesome;
+    font-size: 24px;
+    background-color: #F37D7D;
+}
+.login_error p {
+    padding-top: 10px;
+}
+
+#logo_img{
+    width: 250px;
+    height: 100px;
+    position: relative;
+}
+img {
+    width: 200px;
+    height: 95px;
+}
+.form_login {
+    position: fixed;
+    max-width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.form_login input[type="text"],
+.form_login input[type="password"],
+.form_login input[type="email"] {
+    border: none;
+    width: 100%;
+    border-radius: 4px;
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    padding: 12px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: #e8eeef;
+    color:#8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    text-align: center;
+}
+.form_login input[type="text"]:focus,
+.form_login input[type="password"]:focus,
+.form_login input[type="email"] {
+    color: black;
+}
+.forgot_div {
+    text-align: center;
+}
+#forgot_passwd {
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #45b0c2;
+}
+#forgot_passwd:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.input_div {
+    margin-bottom: 30px;
+}
+#enter_login, #do_forgot, #reg_account {
+    margin-left: 10px;
+    background-color: #55c8dc;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 22px;
+}
+#close_login {
+    margin-right: 10px;
+    background-color: #FFB556;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 10px;
+    float: right;
+}
+#enter_login:hover, #do_forgot:hover, #reg_account:hover {
+    background-color: #5cd2e7;
+    cursor: pointer;
+}
+#close_login:hover {
+    background-color: #FFBD6B;
+    cursor: pointer;
+}
+.back_but, #registration_login {
+    margin-right: 10px;
+    background-color: #FFB556;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 35px 0 35px;
+    float: right;
+}
+.back_but:hover, #registration_login:hover {
+    background-color: #FFBD6B;
+    cursor: pointer;
+}
+#form_for_forgot {
+    display: none;
+    text-align: center;
+}
+#key_input {
+    margin-top: 10px;
+}
+#label_key {
+    color: white;
+}
+#enter_key {
+    margin-left: 10px;
+    background-color: #55c8dc;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 22px;
+    float: left;
+}
+#cencel_key {
+    margin-right: 10px;
+    background-color: #FFB556;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 10px;
+    float: right;
+}
+#enter_key:hover {
+    background-color: #5cd2e7;
+    cursor: pointer;
+}
+#cencel_key:hover {
+    background-color: #FFBD6B;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 330px) {
+    #enter_key {
+        margin-left: 0;
+    }
+    #cencel_key {
+        margin-right: 0;
+    }
+    #enter_login {
+        margin-left: 0;
+    }
+    #close_login {
+        margin-right: 0;
+    }
+}
