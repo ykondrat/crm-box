@@ -3,7 +3,7 @@
 ?>
     <div id="service" class="col-md-9">
         <div id="add_new_section_div" class="divs">
-            <div class="container-fluid" style="background-color: black; margin:0; position:relative; height: 20%; width: 100%">
+            <div class="container-fluid header_new_section">
                 <span>crm-box</span><span id="close_new_section_simb">&#215</span>
             </div>
             <div style="margin-top:3%">
